@@ -4,4 +4,10 @@
 
 **Materia**: Programación 3
 
-**Trabajo Práctico**: Programación Funcional
+**Trabajo Práctico**: JPA
+
+**Ejecutar la consola visual de H2**
+
+```shell
+ ./gradlew h2Console
+```

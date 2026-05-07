@@ -24,8 +24,22 @@ dependencies {
 
     testCompileOnly 'org.projectlombok:lombok:1.18.42'
     testAnnotationProcessor 'org.projectlombok:lombok:1.18.42'
+
+    runtimeOnly 'com.h2database:h2:2.3.232'
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.register('h2Console', JavaExec) {
+    classpath = configurations.runtimeClasspath
+    mainClass = 'org.h2.tools.Server'
+
+    args = [
+            '-web',
+            '-webAllowOthers',
+            '-tcp',
+            '-tcpAllowOthers'
+    ]
 }
