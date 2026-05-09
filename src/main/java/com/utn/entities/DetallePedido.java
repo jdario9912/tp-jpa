@@ -1,22 +1,30 @@
 package com.utn.entities;
 
 
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.time.LocalDate;
 
+@Entity
+@Table(name = "detalles_pedidos")
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
 @SuperBuilder
+@NoArgsConstructor
 public class DetallePedido extends Base {
+    @Column(nullable = false)
     @Getter
     private Integer cantidad;
 
+    @Column(nullable = false)
     @Getter
     @Setter
     private Double subtotal;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @JoinColumn(name = "producto_id")
     @Getter
     private Producto producto;
 

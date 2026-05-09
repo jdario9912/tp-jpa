@@ -8,7 +8,7 @@
         version="3.0"
 >
     <persistence-unit
-            name="miUnidad"
+            name="utnPU"
             transaction-type="RESOURCE_LOCAL"
     >
         <provider>
@@ -16,6 +16,12 @@
         </provider>
 
         <!-- TUS CLASES VAN ACA -->
+        <class>com.utn.entities.Base</class>
+        <class>com.utn.entities.Categoria</class>
+        <class>com.utn.entities.Producto</class>
+        <class>com.utn.entities.DetallePedido</class>
+        <class>com.utn.entities.Pedido</class>
+        <class>com.utn.entities.Usuario</class>
 
         <properties>
             <!-- JDBC H2 en archivo -->
